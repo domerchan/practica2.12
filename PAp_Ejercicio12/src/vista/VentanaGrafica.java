@@ -19,8 +19,8 @@ public class VentanaGrafica extends JFrame implements ActionListener {
 	public static Locale localizacion;
 	private JDesktopPane escritorio;
 	private GestionDatos gd;
-	private JMenu mnuVentanaPais, mnuVentanaEmpresa, mnuVentanaCompetencia, mnuIdiom, mnuFichInsc, mnuAutor, mnuMedico;
-	private JMenuItem mnuVentanas,mnuVentana3, mnuVentana11, mnuVentanabus, mnuVentana22, mnudisponible, mnuSalir, idiomaen,
+	private JMenu mnuVentanaRegistro, mnuVentanaTablas;
+	private JMenuItem mnuVentanpais, mnuVentanaEmpresa, mnuVentanaCompetencia, mnuIdiom, mnuVentanaEquipos, mnuVentanaRevista, mnuVentanaConsulta, mnuSalir, idiomaen,
 			idiomaes;
 
 	public VentanaGrafica() {
@@ -40,64 +40,59 @@ public class VentanaGrafica extends JFrame implements ActionListener {
 
 		JMenuBar barra = new JMenuBar();
 
-		mnuVentanas = new JMenu(lang.getString("Registros"));
+		mnuVentanaRegistro = new JMenu(lang.getString("Registros"));
 
-		mnuVentana1 = new JMenuItem(lang.getString("Pais"));
-		mnuVentana1.addActionListener(this);
-		mnuVentana1.setActionCommand("mnuVentana1");
-		mnuVentanas.add(mnuVentana1);
+		JMenuItem mnuVentanapais = new JMenuItem(lang.getString("B"));
+		mnuVentanapais.addActionListener(this);
+		mnuVentanapais.setActionCommand("mnuVentanaB");
+		mnuVentanaRegistro.add(mnuVentanapais);
 		
-		mnuVentana3 = new JMenuItem(lang.getString("Empresa"));
-		mnuVentana3.addActionListener(this);
-		mnuVentana3.setActionCommand("mnuVentana3");
-		mnuVentanas.add(mnuVentana3);
+		mnuVentanaEmpresa = new JMenuItem(lang.getString("C"));
+		mnuVentanaEmpresa.addActionListener(this);
+		mnuVentanaEmpresa.setActionCommand("mnuVentana3");
+		mnuVentanaRegistro.add(mnuVentanaEmpresa);
 		
-		mnuVentana3 = new JMenuItem(lang.getString("Competencia"));
-		mnuVentana3.addActionListener(this);
-		mnuVentana3.setActionCommand("mnuVentana3");
-		mnuVentanas.add(mnuVentana3);
+		mnuVentanaCompetencia = new JMenuItem(lang.getString("D"));
+		mnuVentanaCompetencia.addActionListener(this);
+		mnuVentanaCompetencia.setActionCommand("mnuVentana3");
+		mnuVentanaRegistro.add(mnuVentanaCompetencia);
 		
-		mnuVentana3 = new JMenuItem(lang.getString("Equipos"));
-		mnuVentana3.addActionListener(this);
-		mnuVentana3.setActionCommand("mnuVentana3");
-		mnuVentanas.add(mnuVentana3);
+		mnuVentanaEquipos = new JMenuItem(lang.getString("E"));
+		mnuVentanaEquipos.addActionListener(this);
+		mnuVentanaEquipos.setActionCommand("mnuVentana3");
+		mnuVentanaRegistro.add(mnuVentanaEquipos);
 		
-		mnuVentana3 = new JMenuItem(lang.getString("Revistas"));
-		mnuVentana3.addActionListener(this);
-		mnuVentana3.setActionCommand("mnuVentana3");
-		mnuVentanas.add(mnuVentana3);
+		mnuVentanaRevista = new JMenuItem(lang.getString("A"));
+		mnuVentanaRevista.addActionListener(this);
+		mnuVentanaRevista.setActionCommand("mnuVentana3");
+		mnuVentanaRegistro.add(mnuVentanaRevista);
 		
-		mnuVentana3 = new JMenuItem(lang.getString("Consultas"));
-		mnuVentana3.addActionListener(this);
-		mnuVentana3.setActionCommand("mnuVentana3");
-		mnuVentanas.add(mnuVentana3);
+		mnuVentanaConsulta = new JMenuItem(lang.getString("F"));
+		mnuVentanaConsulta.addActionListener(this);
+		mnuVentanaConsulta.setActionCommand("mnuVentana3");
+		mnuVentanaRegistro.add(mnuVentanaConsulta);
 
-		mnuVentanas1 = new JMenu(lang.getString("Aspirante"));
-		mnuVentana11 = new JMenuItem(lang.getString("ListadeAspirantes"));
+		mnuVentanaTablas = new JMenu(lang.getString("Tablas"));
+		mnuVentana11 = new JMenuItem(lang.getString("TPais"));
+		mnuVentana11.addActionListener(this);
+		mnuVentana11.setActionCommand("mnuVentana2");
+		mnuVentanas1.add(mnuVentana11);
+		
+		mnuVentana11 = new JMenuItem(lang.getString("TEmpresa"));
+		mnuVentana11.addActionListener(this);
+		mnuVentana11.setActionCommand("mnuVentana2");
+		mnuVentanas1.add(mnuVentana11);
+		
+		mnuVentana11 = new JMenuItem(lang.getString("TCompetencia"));
 		mnuVentana11.addActionListener(this);
 		mnuVentana11.setActionCommand("mnuVentana2");
 		mnuVentanas1.add(mnuVentana11);
 
-		mnuVentanabus = new JMenuItem(lang.getString("BuscarAspirantes"));
-		mnuVentanabus.addActionListener(this);
-		mnuVentanabus.setActionCommand("mnuVentanabus");
-		mnuVentanas1.add(mnuVentanabus);
-
-		mnuVentanas2 = new JMenu(lang.getString("CarrerasUniversitarias"));
-		mnuVentana22 = new JMenuItem(lang.getString("ListadeCarreras"));
-		mnuVentana22.addActionListener(this);
-		mnuVentana22.setActionCommand("mnuVentana22");
-		mnuVentanas2.add(mnuVentana22);
-
-		mnudisponible = new JMenuItem(lang.getString("BuscarCarreras"));
-		mnudisponible.addActionListener(this);
-		mnudisponible.setActionCommand("mnuVentanadisponible");
-		mnuVentanas2.add(mnudisponible);
 
 		mnuSalir = new JMenuItem("Salir");
 		mnuSalir.addActionListener(this);
 		mnuSalir.setActionCommand("mnuSalir");
-		mnuVentanas.add(mnuSalir);
+		mnuVentanaRegistro.add(mnuSalir);
 
 		idioma = new JMenu(lang.getString("Idiomas"));
 		idiomaen = new JMenuItem("EN");
@@ -110,7 +105,7 @@ public class VentanaGrafica extends JFrame implements ActionListener {
 		idiomaes.setActionCommand("mnuES");
 		idioma.add(idiomaes);
 
-		barra.add(mnuVentanas);
+		barra.add(mnuVentanaRegistro);
 		barra.add(mnuVentanas1);
 		barra.add(mnuVentanas2);
 		barra.add(idioma);
@@ -172,7 +167,7 @@ public class VentanaGrafica extends JFrame implements ActionListener {
 		localizacion = new Locale(lenguaje, pais);
 		ResourceBundle lang = ResourceBundle.getBundle("Idioma.mensajes", localizacion);
 		setTitle(lang.getString("SistemadeInscripcionUniversitaria"));
-		mnuVentanas.setText(lang.getString("Inscripciones"));
+		mnuVentanaRegistro.setText(lang.getString("Inscripciones"));
 		idioma.setText(lang.getString("Idiomas"));
 
 		mnuVentana1.setText(lang.getString("NuevaInscripcion"));
