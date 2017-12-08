@@ -21,13 +21,11 @@ public class F extends JInternalFrame implements ActionListener {
 
 		Locale localizacion = VentanaGrafica.localizacion;
 		ResourceBundle lang = ResourceBundle.getBundle("Idioma.mesajes", localizacion);
-
 		this.gd = gd;
 		setSize(750, 209);
 
 		Container c = getContentPane();
 		c.setLayout(new BorderLayout());
-
 		JPanel pnlDatos = new JPanel();
 		pnlDatos.setBorder(BorderFactory.createTitledBorder(lang.getString("Datos")));
 

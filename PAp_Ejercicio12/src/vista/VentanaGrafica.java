@@ -47,7 +47,7 @@ public class VentanaGrafica extends JFrame implements ActionListener {
 		mnuVentanaB.setActionCommand("mnuVentanaB");
 		mnuVentanaRegistro.add(mnuVentanaB);
 		
-		mnuVentanaC = new JMenuItem(lang.getString("C"));
+		JMenuItem mnuVentanaC = new JMenuItem(lang.getString("C"));
 		mnuVentanaC.addActionListener(this);
 		mnuVentanaC.setActionCommand("mnuVentanaC");
 		mnuVentanaRegistro.add(mnuVentanaC);
