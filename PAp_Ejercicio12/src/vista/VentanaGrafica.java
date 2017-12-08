@@ -19,7 +19,7 @@ public class VentanaGrafica extends JFrame implements ActionListener {
 	public static Locale localizacion;
 	private JDesktopPane escritorio;
 	private GestionDatos gd;
-	private JMenu mnuVentanaRegistro, mnuVentanaTablas;
+	private JMenu mnuVentanaRegistro, mnuVentanaTablas, idioma;
 	private JMenuItem mnuVentanpais, mnuVentanaEmpresa, mnuVentanaCompetencia, mnuIdiom, mnuVentanaEquipos, mnuVentanaRevista, mnuVentanaConsulta, mnuSalir, idiomaen,
 			idiomaes;
 
@@ -49,45 +49,28 @@ public class VentanaGrafica extends JFrame implements ActionListener {
 		
 		mnuVentanaEmpresa = new JMenuItem(lang.getString("C"));
 		mnuVentanaEmpresa.addActionListener(this);
-		mnuVentanaEmpresa.setActionCommand("mnuVentana3");
+		mnuVentanaEmpresa.setActionCommand("mnuVentanaC");
 		mnuVentanaRegistro.add(mnuVentanaEmpresa);
 		
 		mnuVentanaCompetencia = new JMenuItem(lang.getString("D"));
 		mnuVentanaCompetencia.addActionListener(this);
-		mnuVentanaCompetencia.setActionCommand("mnuVentana3");
+		mnuVentanaCompetencia.setActionCommand("mnuVentanaD");
 		mnuVentanaRegistro.add(mnuVentanaCompetencia);
 		
 		mnuVentanaEquipos = new JMenuItem(lang.getString("E"));
 		mnuVentanaEquipos.addActionListener(this);
-		mnuVentanaEquipos.setActionCommand("mnuVentana3");
+		mnuVentanaEquipos.setActionCommand("mnuVentanaE");
 		mnuVentanaRegistro.add(mnuVentanaEquipos);
 		
 		mnuVentanaRevista = new JMenuItem(lang.getString("A"));
 		mnuVentanaRevista.addActionListener(this);
-		mnuVentanaRevista.setActionCommand("mnuVentana3");
+		mnuVentanaRevista.setActionCommand("mnuVentanaA");
 		mnuVentanaRegistro.add(mnuVentanaRevista);
 		
 		mnuVentanaConsulta = new JMenuItem(lang.getString("F"));
 		mnuVentanaConsulta.addActionListener(this);
-		mnuVentanaConsulta.setActionCommand("mnuVentana3");
+		mnuVentanaConsulta.setActionCommand("mnuVentanaF");
 		mnuVentanaRegistro.add(mnuVentanaConsulta);
-
-		mnuVentanaTablas = new JMenu(lang.getString("Tablas"));
-		mnuVentana11 = new JMenuItem(lang.getString("TPais"));
-		mnuVentana11.addActionListener(this);
-		mnuVentana11.setActionCommand("mnuVentana2");
-		mnuVentanas1.add(mnuVentana11);
-		
-		mnuVentana11 = new JMenuItem(lang.getString("TEmpresa"));
-		mnuVentana11.addActionListener(this);
-		mnuVentana11.setActionCommand("mnuVentana2");
-		mnuVentanas1.add(mnuVentana11);
-		
-		mnuVentana11 = new JMenuItem(lang.getString("TCompetencia"));
-		mnuVentana11.addActionListener(this);
-		mnuVentana11.setActionCommand("mnuVentana2");
-		mnuVentanas1.add(mnuVentana11);
-
 
 		mnuSalir = new JMenuItem("Salir");
 		mnuSalir.addActionListener(this);
@@ -106,11 +89,8 @@ public class VentanaGrafica extends JFrame implements ActionListener {
 		idioma.add(idiomaes);
 
 		barra.add(mnuVentanaRegistro);
-		barra.add(mnuVentanas1);
-		barra.add(mnuVentanas2);
 		barra.add(idioma);
 
-		// getContentPane().add(barra); error
 		setJMenuBar(barra);
 
 	}
@@ -124,7 +104,7 @@ public class VentanaGrafica extends JFrame implements ActionListener {
 		System.out.println("Eventos menu " + comando);
 
 		switch (comando) {
-		case "mnuVentana1":
+		case "mnuVentanapais":
 			llamarVentanaInscripcion();
 			break;
 		case "mnuVentana3":
@@ -170,57 +150,57 @@ public class VentanaGrafica extends JFrame implements ActionListener {
 		mnuVentanaRegistro.setText(lang.getString("Inscripciones"));
 		idioma.setText(lang.getString("Idiomas"));
 
-		mnuVentana1.setText(lang.getString("NuevaInscripcion"));
+		/*mnuVentana1.setText(lang.getString("NuevaInscripcion"));
 		mnuVentana3.setText(lang.getString("NuevaUniversidad"));
 		mnuVentanas1.setText(lang.getString("Aspirante"));
 		mnuVentana11.setText(lang.getString("ListadeAspirantes"));
 		mnuVentanabus.setText(lang.getString("BuscarAspirantes"));
 		mnuVentanas2.setText(lang.getString("CarrerasUniversitarias"));
 		mnuVentana22.setText(lang.getString("ListadeCarreras"));
-		mnudisponible.setText(lang.getString("BuscarCarreras"));
+		mnudisponible.setText(lang.getString("BuscarCarreras"));*/
 		mnuSalir.setText(lang.getString("Salir"));
 
 	}
 
 	private void llamarBuscarAspirante() {
 		// TODO Auto-generated method stub
-		BuscarAspirante buscar = new BuscarAspirante();
+	/*	BuscarAspirante buscar = new BuscarAspirante();
 		buscar.setVisible(true);
 		escritorio.add(buscar);
 		try {
 			buscar.setSelected(true);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		}*/
 	}
 
 	private void llamarListadoAspirantes() {
 		// TODO Auto-generated method stub
-		VentanaTablaAspirantes vta = new VentanaTablaAspirantes(gd);
+	/*	VentanaTablaAspirantes vta = new VentanaTablaAspirantes(gd);
 		vta.setVisible(true);
 		escritorio.add(vta);
 		try {
 			vta.setSelected(true);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		}*/
 	}
 
 	public void llamarVentanaInscripcion() {
 		// TODO Auto-generated method stub
-		VnVentanaInscripcion vins = new VnVentanaInscripcion(gd);
+/*		VnVentanaInscripcion vins = new VnVentanaInscripcion(gd);
 		vins.setVisible(true);
 		escritorio.add(vins);
 		try {
 			vins.setSelected(true);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		}*/
 	}
 	
 	public void llamarVentanaUniversidad() {
 		// TODO Auto-generated method stub
-		VnVentanaUniversidad vuni = new VnVentanaUniversidad(gd);
+	/*	VnVentanaUniversidad vuni = new VnVentanaUniversidad(gd);
 		vuni.setVisible(true);
 		escritorio.add(vuni);
 		
@@ -228,19 +208,19 @@ public class VentanaGrafica extends JFrame implements ActionListener {
 			vuni.setSelected(true);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		}*/
 	}
 
 	private void llamarListadoCarreras() {
 		// TODO Auto-generated method stub
-		TablaCarrera tc = new TablaCarrera(gd);
+	/*	TablaCarrera tc = new TablaCarrera(gd);
 		tc.setVisible(true);
 		escritorio.add(tc);
 		try {
 			tc.setSelected(true);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		}*/
 
 	}
 

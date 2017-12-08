@@ -1,20 +1,24 @@
 package modelo;
 
+import java.util.List;
+
 public class Empresa {
 
 	private String nombre;
 	private String ruc;
 	private String direccion;
+	private List<Departamento> departamentos;
 	
 	public Empresa() {
 		
 	}
 
-	public Empresa(String nombre, String ruc, String direccion) {
+	public Empresa(String nombre, String ruc, String direccion, List<Departamento> departamentos) {
 		super();
 		this.nombre = nombre;
 		this.ruc = ruc;
 		this.direccion = direccion;
+		this.departamentos = departamentos;
 	}
 
 	public String getNombre() {
@@ -41,9 +45,12 @@ public class Empresa {
 		this.direccion = direccion;
 	}
 
-	@Override
-	public String toString() {
-		return "Empresa [nombre=" + nombre + ", ruc=" + ruc + ", direccion=" + direccion + "]";
+	public List<Departamento> getDepartamentos() {
+		return departamentos;
 	}
-	
+
+	public void setDepartamentos(List<Departamento> departamentos) {
+		this.departamentos = departamentos;
+	}
+
 }

@@ -6,6 +6,7 @@ public class Autor extends Persona {
 	private String pseudonimo;
 	private String nacionalidad;
 	
+	
 	public Autor() {
 		
 	}

@@ -1,20 +1,22 @@
 package modelo;
 
+import java.util.List;
+
 public class Competencia {
 
 	private String nombre;
 	private String categoria;
-	private String nParticipantes;
+	private List<Atleta> atletas;
 	
 	public Competencia() {
 		
 	}
 
-	public Competencia(String nombre, String categoria, String nParticipantes) {
+	public Competencia(String nombre, String categoria, List<Atleta> atletas) {
 		super();
 		this.nombre = nombre;
 		this.categoria = categoria;
-		this.nParticipantes = nParticipantes;
+		this.atletas = atletas;
 	}
 
 	public String getNombre() {
@@ -33,12 +35,12 @@ public class Competencia {
 		this.categoria = categoria;
 	}
 
-	public String getnParticipantes() {
-		return nParticipantes;
+	public List<Atleta> getAtletas() {
+		return atletas;
 	}
 
-	public void setnParticipantes(String nParticipantes) {
-		this.nParticipantes = nParticipantes;
+	public void setAtletas(List<Atleta> atletas) {
+		this.atletas = atletas;
 	}
-	
+
 }

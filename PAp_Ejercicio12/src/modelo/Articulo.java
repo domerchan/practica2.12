@@ -6,18 +6,21 @@ public class Articulo {
 	private String resumen;
 	private String pInicio;
 	private String pFinal;
-	//hola
+
+	private Autor autor;
+
 	
 	public Articulo() {
 		
 	}
 
-	public Articulo(String titulo, String resumen, String pInicio, String pFinal) {
+	public Articulo(String titulo, String resumen, String pInicio, String pFinal, Autor autor) {
 		super();
 		this.titulo = titulo;
 		this.resumen = resumen;
 		this.pInicio = pInicio;
 		this.pFinal = pFinal;
+		this.autor = autor;
 	}
 
 	public String getTitulo() {
@@ -50,6 +53,14 @@ public class Articulo {
 
 	public void setpFinal(String pFinal) {
 		this.pFinal = pFinal;
+	}
+
+	public Autor getAutor() {
+		return autor;
+	}
+
+	public void setAutor(Autor autor) {
+		this.autor = autor;
 	}
 	
 }
