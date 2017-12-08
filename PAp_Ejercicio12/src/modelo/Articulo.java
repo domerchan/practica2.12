@@ -6,6 +6,7 @@ public class Articulo {
 	private String resumen;
 	private String pInicio;
 	private String pFinal;
+	//hola
 	
 	public Articulo() {
 		
