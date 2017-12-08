@@ -5,7 +5,13 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JInternalFrame;
 
+import controlador.GestionDatos;
+
 public class C extends JInternalFrame implements ActionListener {
+
+	public C(GestionDatos gd) {
+		// TODO Auto-generated constructor stub
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
