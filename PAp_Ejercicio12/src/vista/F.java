@@ -9,9 +9,6 @@ import controlador.GestionDatos;
 
 public class F extends JInternalFrame implements ActionListener {
 
-	public F(GestionDatos gd) {
-		// TODO Auto-generated constructor stub
-	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

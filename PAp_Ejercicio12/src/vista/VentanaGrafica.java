@@ -228,6 +228,8 @@ public class VentanaGrafica extends JFrame implements ActionListener {
 		System.exit(0);
 	}
 	
+	//bsdjkfgsdufglsfgsldf
+	
 	
 
 }
