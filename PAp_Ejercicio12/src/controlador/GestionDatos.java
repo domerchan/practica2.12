@@ -48,13 +48,13 @@ public class GestionDatos {
 
 	}
 	
-	public void addArticulo(String titulo, String resumen, String pInicio, String pFinal, Autor autor,Persona persona, String nombre, String apellido, String cedula, String nacionalidad, String pseudonimo) {
+	public void addArticulo(String titulo, String resumen, String pInicio, String pFinal, Autor autor,Persona persona, String nombre, String apellido, String cedula, String nacionalidad, String seudonimo) {
 			Autor autor1 = new Autor(); 
 			autor1.setNombre(nombre);
 			autor1.setApellido(apellido);
 			autor1.setCedula(cedula);
 			autor1.setNacionalidad(nacionalidad);
-			autor1.setPseudonimo(pseudonimo);
+			autor1.setSeudonimo(seudonimo);
 			
 			Articulo articulo = new Articulo();
 			articulo.setAutor(autor1);

@@ -1,28 +1,28 @@
 package modelo;
 
 public class Autor extends Persona {
-	private String pseudonimo;
+	private String seudonimo;
 	private String nacionalidad;
 	
 	public Autor() {
 		
 	}
 	
-	public Autor(String nombre, String apellido, String cedula, String pseudonimo, String nacionalidad) {
+	public Autor(String nombre, String apellido, String cedula, String seudonimo, String nacionalidad) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.cedula = cedula;
-		this.pseudonimo = pseudonimo;
+		this.seudonimo = seudonimo;
 		this.nacionalidad = nacionalidad;
 	}
 	
-	public String getPseudonimo() {
-		return pseudonimo;
+	public String getSeudonimo() {
+		return seudonimo;
 	}
 
-	public void setPseudonimo(String pseudonimo) {
-		this.pseudonimo = pseudonimo;
+	public void setSeudonimo(String seudonimo) {
+		this.seudonimo = seudonimo;
 	}
 
 	public String getNacionalidad() {
