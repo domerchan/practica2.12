@@ -116,8 +116,6 @@ public class A extends JInternalFrame implements ActionListener {
 		c.add(pnlA, BorderLayout.CENTER);
 
 	}
-	
-	
 
 	public void actionPerformed(ActionEvent arg0) {
 
