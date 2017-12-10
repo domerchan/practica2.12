@@ -121,8 +121,29 @@ public class A extends JInternalFrame implements ActionListener {
 		gd.addArticulo(txtTitulo.getText(), txtResumen.getText(), txtInicio.getText(), txtFinal.getText(), txtNombre.getText(), txtApellido.getText(), txtCedula.getText(), txtNacionalidad.getText(), txtSeudonimo.getText());
 	}
 	
-	public void actionPerformed(ActionEvent arg0) {
+	private void limpiar() {
+		txtTitulo.setText("");
+		txtResumen.setText("");
+		txtInicio.setText("");
+		txtFinal.setText("");
+		txtApellido.setText("");
+		txtCedula.setText("");
+		txtSeudonimo.setText("");
+		txtNacionalidad.setText("");
+	}
+	
+	public void actionPerformed(ActionEvent e) {
 
+		String command = e.getActionCommand();
+		
+		switch (command) {
+		case "Guardar":
+			newArticulo();
+			break;
+		case "Limpiar":
+			limpiar();
+			break;
+		}
 	}
 
 	/*
