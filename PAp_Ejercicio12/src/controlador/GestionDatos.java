@@ -38,6 +38,7 @@ public class GestionDatos {
 	private List<Competencia> competencias;
 	private List<Atleta> atletas;
 	private List<Paciente> pacientes;
+	private Revista revista;
 	private String pathA = "archivos/A.txt";
 	private String pathB = "archivos/B.txt";
 	private String pathC = "archivos/C.txt";
@@ -57,6 +58,8 @@ public class GestionDatos {
 		competencias = new ArrayList<Competencia>();
 		atletas = new ArrayList<Atleta>();
 		pacientes = new ArrayList<Paciente>();
+		
+		addRevista();
 
 	}
 /*<<<<<<< HEAD
@@ -102,12 +105,12 @@ public class GestionDatos {
 		}
 	}
 	
-	public void addRevista(String nombre, String nEdicion, String idioma, Articulo articulo) {
+	public void addRevista() {
 		try {
-		Revista revista = new Revista();
-		revista.setNombre(nombre);
-		revista.setnEdicion(nEdicion);
-		revista.setIdioma(idioma);
+		revista = new Revista();
+		revista.setNombre("Nature");
+		revista.setnEdicion("204");
+		revista.setIdioma("Inglés");
 		revista.setArticulos(articulos);
 		
 		FileWriter file = new FileWriter(pathA, true);
@@ -119,6 +122,10 @@ public class GestionDatos {
 		}catch (IOException evento){
 			evento.printStackTrace();
 		}
+	}
+	
+	public Revista getRevista() {
+		return revista;
 	}
 
 	public void addCanton(String nHabitantes,String nombre, String ubicacionGPS) {

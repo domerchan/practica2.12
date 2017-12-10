@@ -19,6 +19,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import controlador.GestionDatos;
+import modelo.Revista;
 
 public class A extends JInternalFrame implements ActionListener {
 
@@ -33,6 +34,7 @@ public class A extends JInternalFrame implements ActionListener {
 	private JTextField txtSeudonimo;
 	private JTextField txtNacionalidad;
 	private JButton btnGuardar;
+	private JButton btnLimpiar;
 	private JTable tblArticulo;
 
 	public A(GestionDatos gd) {
@@ -90,6 +92,10 @@ public class A extends JInternalFrame implements ActionListener {
 		btnGuardar.addActionListener(this);
 		btnGuardar.setActionCommand("Guardar");
 		pnlAutor.add(btnGuardar);
+		btnLimpiar = new JButton(lang.getString("Limpiar"));
+		btnLimpiar.addActionListener(this);
+		btnLimpiar.setActionCommand("Limpiar");
+		pnlAutor.add(btnLimpiar);
 		
 		pnlDatos.add(pnlArticulo);
 		pnlDatos.add(pnlAutor);
@@ -101,9 +107,17 @@ public class A extends JInternalFrame implements ActionListener {
 		pnlA.add(pnlDatos);
 		pnlA.add(tblArticulo);
 		
+		JPanel pnlRevista = new JPanel();
+		pnlRevista.setLayout(new GridLayout(2,1));
+		pnlRevista.add(new JLabel(gd.getRevista().getNombre()));
+		pnlRevista.add(new JLabel(lang.getString("Edicion:") + gd.getRevista().getnEdicion()));
+		
+		c.add(pnlRevista, BorderLayout.NORTH);
 		c.add(pnlA, BorderLayout.CENTER);
 
 	}
+	
+	
 
 	public void actionPerformed(ActionEvent arg0) {
 
@@ -122,6 +136,8 @@ public class A extends JInternalFrame implements ActionListener {
 	 Cedula: Cédula: 
 	 Nacionalidad: Nacionalidad: 
 	 Guardar Guardar
+	 Edicion: Edición: 
+	 Limpiar Limpiar
 	  
 	 * INGLES 
 	 Datos Data 
@@ -135,6 +151,8 @@ public class A extends JInternalFrame implements ActionListener {
 	 Cedula: ID: 
 	 Nacionalidad: Nationality: 
 	 Guardar Save
+	 Edicion: Edition: 
+	 Limpiar Clean
 	 
 	 */
 }

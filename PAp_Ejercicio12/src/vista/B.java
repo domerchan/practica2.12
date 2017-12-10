@@ -30,6 +30,9 @@ public class B extends JInternalFrame implements ActionListener {
 
 		JPanel pnlDatos = new JPanel();
 		pnlDatos.setBorder(BorderFactory.createTitledBorder(lang.getString("Datos")));
+		
+		JPanel pnlProvincia = new JPanel();
+		pnlProvincia.setBorder(BorderFactory.createTitledBorder(lang.getString("Provincia")));
 
 	}
 
@@ -38,5 +41,14 @@ public class B extends JInternalFrame implements ActionListener {
 		// TODO Auto-generated method stub
 
 	}
+	
+	/*
+	 * ESPANOL
+	 Provincia Provincia
+	 
+	 * INGLES
+	 Provincia  Province
+	 
+	 * */
 
 }
