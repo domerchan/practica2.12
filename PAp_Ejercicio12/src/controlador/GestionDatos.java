@@ -68,25 +68,25 @@ public class GestionDatos {
 			Autor autor1 = new Autor(); 
 =======*/
 
-	public void addArticulo(String titulo, String resumen, String pInicio, String pFinal, Autor autor,
+	public void addArticulo(String titulo, String resumen, String pInicio, String pFinal,
 			String nombre, String apellido, String cedula, String nacionalidad, String seudonimo) {
 		try {
-			Autor autor1 = new Autor();
+			Autor autor = new Autor();
 //>>>>>>> branch 'master' of https://github.com/domerchan/practica2.12.git
-			autor1.setNombre(nombre);
-			autor1.setApellido(apellido);
-			autor1.setCedula(cedula);
-			autor1.setNacionalidad(nacionalidad);
+			autor.setNombre(nombre);
+			autor.setApellido(apellido);
+			autor.setCedula(cedula);
+			autor.setNacionalidad(nacionalidad);
 /*<<<<<<< HEAD
 			autor1.setSeudonimo(seudonimo);
 			
 =======*/
-			autor1.setSeudonimo(seudonimo);
-			autores.add(autor1);
+			autor.setSeudonimo(seudonimo);
+			autores.add(autor);
 
 //>>>>>>> branch 'master' of https://github.com/domerchan/practica2.12.git
 			Articulo articulo = new Articulo();
-			articulo.setAutor(autor1);
+			articulo.setAutor(autor);
 			articulo.setTitulo(titulo);
 			articulo.setResumen(resumen);
 			articulo.setpInicio(pInicio);

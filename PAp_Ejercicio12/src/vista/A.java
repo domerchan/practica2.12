@@ -117,6 +117,10 @@ public class A extends JInternalFrame implements ActionListener {
 
 	}
 
+	public void newArticulo() {
+		gd.addArticulo(txtTitulo.getText(), txtResumen.getText(), txtInicio.getText(), txtFinal.getText(), txtNombre.getText(), txtApellido.getText(), txtCedula.getText(), txtNacionalidad.getText(), txtSeudonimo.getText());
+	}
+	
 	public void actionPerformed(ActionEvent arg0) {
 
 	}
