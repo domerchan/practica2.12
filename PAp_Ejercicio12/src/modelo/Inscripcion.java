@@ -3,22 +3,14 @@ package modelo;
 import java.util.List;
 
 public class Inscripcion {
-
+	
 	private int nFicha;
 	private int valor;
-	private Equipo equipo;
+	private List<Equipo> equipos;
 	private List<Jugador> jugadores;
-	
-	public Inscripcion() {
-		
-	}
 
-	public Inscripcion(int nFicha, int valor, Equipo equipo, List<Jugador> jugadores) {
-		super();
-		this.nFicha = nFicha;
-		this.valor = valor;
-		this.equipo = equipo;
-		this.jugadores = jugadores;
+	public Inscripcion() {
+
 	}
 
 	public int getnFicha() {
@@ -37,12 +29,12 @@ public class Inscripcion {
 		this.valor = valor;
 	}
 
-	public Equipo getEquipo() {
-		return equipo;
+	public List<Equipo> getEquipos() {
+		return equipos;
 	}
 
-	public void setEquipo(Equipo equipo) {
-		this.equipo = equipo;
+	public void setEquipos(List<Equipo> equipos) {
+		this.equipos = equipos;
 	}
 
 	public List<Jugador> getJugadores() {
@@ -52,5 +44,6 @@ public class Inscripcion {
 	public void setJugadores(List<Jugador> jugadores) {
 		this.jugadores = jugadores;
 	}
+
 	
 }
