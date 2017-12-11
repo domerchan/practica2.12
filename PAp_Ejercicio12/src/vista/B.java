@@ -2,44 +2,60 @@ package vista;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
 import javax.swing.BorderFactory;
+import javax.swing.JComboBox;
 import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 
-import controlador.GestionDatos;
+import controlador.GestionB;
 
-public class B extends JInternalFrame implements ActionListener {
+public class B extends JInternalFrame implements ActionListener, ItemListener {
 
-	private GestionDatos gd;
+	private GestionB gb;
+	private JComboBox cbxPais;
+	private JComboBox cbxProvincia;
+	private JComboBox cbxCanton;
 	
-	public B(GestionDatos gd) {
+	public B(GestionB gb) {
 
 		Locale localizacion = VentanaGrafica.localizacion;
 		ResourceBundle lang = ResourceBundle.getBundle("Idioma.mesajes", localizacion);
 
-		this.gd = gd;
+		this.gb = gb;
 		setSize(750, 209);
 
 		Container c = getContentPane();
 		c.setLayout(new BorderLayout());
 
 		JPanel pnlDatos = new JPanel();
+		pnlDatos.setLayout(new GridLayout(1,3));
 		pnlDatos.setBorder(BorderFactory.createTitledBorder(lang.getString("Datos")));
 		
-		JPanel pnlProvincia = new JPanel();
-		pnlProvincia.setBorder(BorderFactory.createTitledBorder(lang.getString("Provincia")));
+		
+		JPanel pnlSelec = new JPanel();
+		pnlSelec.setBorder(BorderFactory.createEmptyBorder());
+		String[] paises = gb.getPaises();
+		String[] provincias = gb.searchProvincias(cbxPais.getSelectedItem().toString());
+		String[] cantones = gb.searchCantones(cbxProvincia.getSelectedItem().toString());
+		cbxPais = new JComboBox(paises);
+		
 
 	}
 
-	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
 
+	}
+
+	public void itemStateChanged(ItemEvent e) {
+		
 	}
 	
 	/*
