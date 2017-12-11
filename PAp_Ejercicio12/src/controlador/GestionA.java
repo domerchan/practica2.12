@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
+
 import modelo.Articulo;
 import modelo.Autor;
 import modelo.Revista;
@@ -95,5 +97,24 @@ public class GestionA {
 		
 		return true;
 	}
-
+	
+	public void duplicadosA(String articulo, String nombre) {		
+		List<Articulo> articulo1 = new ArrayList<Articulo>();
+		for(int i=0; i<articulo1.size();i++) {
+			Articulo articulos = articulo1.get(i);
+			if(articulos.getTitulo().equals(articulo)&&articulos.getAutor().equals(nombre)) {
+				JOptionPane.showConfirmDialog(this, "Articulo ya existente", "ERROR",JOptionPane.ERROR_MESSAGE);
+			}
+		}		
+	}
+	
+	public void duplicadosautoresA(String nombre, String apellido, String Seudonimo) {
+		List<Autor> autor1 = new ArrayList<Autor>();
+		for(int i =0; i<autor1.size();i++) {
+			Autor autores = autor1.get(i);
+			if(autores.getNombre().equals(nombre)&&autores.getApellido().equals(apellido)&&autores.getSeudonimo().equals(Seudonimo)) {
+				JOptionPane.showConfirmDialog(this, "Articulo ya existente", "ERROR",JOptionPane.ERROR_MESSAGE);
+			}
+		}
+	}
 }
