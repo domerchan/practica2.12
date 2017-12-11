@@ -88,4 +88,22 @@ public class GestionE {
 		
 		return true;
 	}
+	
+	public boolean duplicadosJugadores(String nombre,String cedula){
+		for(int i=0; i<jugadores.size();i++) {
+			if(jugadores.get(i).getNombre().equals(nombre) && jugadores.get(i).getCedula().equals(cedula)){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean duplicadosEquipos(String nombre,String codigo){
+		for(int i=0; i<equipos.size();i++) {
+			if(equipos.get(i).getNombre().equals(nombre) && equipos.get(i).getCodigo().equals(codigo)){
+				return true;
+			}
+		}
+		return false;
+	}
 }

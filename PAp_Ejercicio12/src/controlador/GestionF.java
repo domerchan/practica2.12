@@ -84,4 +84,13 @@ public class GestionF {
 		
 		return true;
 	}
+	
+	public boolean duplicadosPacientes(String nombre,String cedula){
+		for(int i=0; i<pacientes.size();i++) {
+			if(pacientes.get(i).getNombre().equals(nombre) && pacientes.get(i).getCedula().equals(cedula)){
+				return true;
+			}
+		}
+		return false;
+	}
 }

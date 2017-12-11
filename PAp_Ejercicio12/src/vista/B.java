@@ -27,7 +27,7 @@ public class B extends JInternalFrame implements ActionListener, ItemListener {
 	public B(GestionB gb) {
 
 		Locale localizacion = VentanaGrafica.localizacion;
-		ResourceBundle lang = ResourceBundle.getBundle("Idioma.mesajes", localizacion);
+		ResourceBundle lang = ResourceBundle.getBundle("lang.mensajes", localizacion);
 
 		this.gb = gb;
 		setSize(750, 209);
@@ -42,10 +42,10 @@ public class B extends JInternalFrame implements ActionListener, ItemListener {
 		
 		JPanel pnlSelec = new JPanel();
 		pnlSelec.setBorder(BorderFactory.createEmptyBorder());
-		String[] paises = gb.getPaises();
-		String[] provincias = gb.searchProvincias(cbxPais.getSelectedItem().toString());
-		String[] cantones = gb.searchCantones(cbxProvincia.getSelectedItem().toString());
-		cbxPais = new JComboBox(paises);
+	//	String[] paises = gb.getPaises();
+		//String[] provincias = gb.searchProvincias(cbxPais.getSelectedItem().toString());
+		//String[] cantones = gb.searchCantones(cbxProvincia.getSelectedItem().toString());
+		//cbxPais = new JComboBox(paises);
 		
 
 	}

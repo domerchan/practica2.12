@@ -91,4 +91,22 @@ public class GestionD {
 		
 		return true;
 	}
+	
+	public boolean duplicadosCompetencias(String nombre,String categoria){
+		for(int i=0; i<competencias.size();i++) {
+			if(competencias.get(i).getNombre().equals(nombre) && competencias.get(i).getCategoria().equals(categoria)){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean duplicadosAtletas(String nombre,String codigo){
+		for(int i=0; i<atletas.size();i++) {
+			if(atletas.get(i).getNombre().equals(nombre) && atletas.get(i).getCodigo().equals(codigo)){
+				return true;
+			}
+		}
+		return false;
+	}
 }

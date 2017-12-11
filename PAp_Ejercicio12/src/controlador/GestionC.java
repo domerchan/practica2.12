@@ -98,4 +98,22 @@ public class GestionC {
 		
 		return true;
 	}
+	
+	public boolean duplicadosDepartamentos(String nombre,String nDepartamento){
+		for(int i=0; i<departamentos.size();i++) {
+			if(departamentos.get(i).getNombre().equals(nombre) && departamentos.get(i).getnDepartamento().equals(nDepartamento)){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean duplicadosEmpleados(String nombre,String cedula){
+		for(int i=0; i<empleados.size();i++) {
+			if(empleados.get(i).getNombre().equals(nombre) && empleados.get(i).getCedula().equals(cedula)){
+				return true;
+			}
+		}
+		return false;
+	}
 }

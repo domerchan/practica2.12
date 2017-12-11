@@ -97,24 +97,23 @@ public class GestionA {
 		
 		return true;
 	}
-	
-	public void duplicadosA(String articulo, String nombre) {		
-		List<Articulo> articulo1 = new ArrayList<Articulo>();
-		for(int i=0; i<articulo1.size();i++) {
-			Articulo articulos = articulo1.get(i);
-			if(articulos.getTitulo().equals(articulo)&&articulos.getAutor().equals(nombre)) {
-				JOptionPane.showConfirmDialog(this, "Articulo ya existente", "ERROR",JOptionPane.ERROR_MESSAGE);
-			}
-		}		
-	}
-	
-	public void duplicadosautoresA(String nombre, String apellido, String Seudonimo) {
-		List<Autor> autor1 = new ArrayList<Autor>();
-		for(int i =0; i<autor1.size();i++) {
-			Autor autores = autor1.get(i);
-			if(autores.getNombre().equals(nombre)&&autores.getApellido().equals(apellido)&&autores.getSeudonimo().equals(Seudonimo)) {
-				JOptionPane.showConfirmDialog(this, "Articulo ya existente", "ERROR",JOptionPane.ERROR_MESSAGE);
+
+	public boolean duplicadosArticulos(String titulo,String autor){
+		for(int i=0; i<articulos.size();i++) {
+			if(articulos.get(i).getTitulo().equals(titulo) && articulos.get(i).getAutor().equals(autor)){
+				return true;
 			}
 		}
+		return false;
 	}
+	
+	public boolean duplicadosAutores(String nombre,String Seudonimo){
+		for(int i=0; i<autores.size();i++) {
+			if(autores.get(i).getNombre().equals(nombre) && autores.get(i).getSeudonimo().equals(Seudonimo)){
+				return true;
+			}
+		}
+		return false;
+	}
+	
 }

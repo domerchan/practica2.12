@@ -85,5 +85,23 @@ public class GestionB {
 			evento.printStackTrace();
 		}
 	}
+	
+	public boolean duplicadosProvincias(String nombre){
+		for(int i=0; i<provincias.size();i++) {
+			if(provincias.get(i).getNombre().equals(nombre)){
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean duplicadosCantones(String nombre){
+		for(int i=0; i<cantones.size();i++) {
+			if(cantones.get(i).getNombre().equals(nombre) ){
+				return true;
+			}
+		}
+		return false;
+	}
 
 }

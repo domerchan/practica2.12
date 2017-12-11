@@ -12,7 +12,7 @@ import modelo.Articulo;
 public class ModelArticulo extends AbstractTableModel {
 
 	private Locale localizacion = VentanaGrafica.localizacion;
-	private ResourceBundle lang = ResourceBundle.getBundle("Idioma.mensajes", localizacion);
+	private ResourceBundle lang = ResourceBundle.getBundle("lang.mensajes", localizacion);
 	private List<Articulo> datos;
 	public String[] columnas = {lang.getString("Titulo"), lang.getString("Autor"), lang.getString("Inicio"), lang.getString("Final") };
 	public Class[] columnasTipos = {String.class, String.class, String.class, String.class};

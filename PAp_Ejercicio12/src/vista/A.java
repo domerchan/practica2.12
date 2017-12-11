@@ -40,7 +40,7 @@ public class A extends JInternalFrame implements ActionListener {
 	public A(GestionDatos gd) {
 
 		Locale localizacion = VentanaGrafica.localizacion;
-		ResourceBundle lang = ResourceBundle.getBundle("Idioma.mesajes", localizacion);
+		ResourceBundle lang = ResourceBundle.getBundle("lang.mensajes", localizacion);
 
 		this.gd = gd;
 		setSize(750, 209);
