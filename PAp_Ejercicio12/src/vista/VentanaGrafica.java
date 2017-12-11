@@ -30,8 +30,8 @@ public class VentanaGrafica extends JFrame implements ActionListener {
 
 	private void initComponents() {
 		// TODO Auto-generated method stub
-		localizacion = new Locale("es", "Es");
-		ResourceBundle lang = ResourceBundle.getBundle("Idioma.mensajes", localizacion);
+		localizacion = new Locale("es", "EC");
+		ResourceBundle lang = ResourceBundle.getBundle("lang.mensajes", localizacion);
 		setSize(800, 600);
 		setTitle(lang.getString(lang.getString("Gestion Listas")));
 		getContentPane().setLayout(new BorderLayout());
