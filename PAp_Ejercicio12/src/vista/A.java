@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -18,12 +19,12 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-import controlador.GestionDatos;
+import controlador.GestionA;
 import modelo.Revista;
 
 public class A extends JInternalFrame implements ActionListener {
 
-	private GestionDatos gd;
+	private GestionA ga;
 	private JTextField txtTitulo;
 	private JTextArea txtResumen;
 	private JTextField txtInicio;
@@ -33,16 +34,19 @@ public class A extends JInternalFrame implements ActionListener {
 	private JTextField txtCedula;
 	private JTextField txtSeudonimo;
 	private JTextField txtNacionalidad;
+	private JTextField txtAutor;
 	private JButton btnGuardar;
 	private JButton btnLimpiar;
+	private JComboBox cbxAutor;
+	private JComboBox cbxArticulo;
 	private JTable tblArticulo;
 
-	public A(GestionDatos gd) {
+	public A(GestionA ga) {
 
 		Locale localizacion = VentanaGrafica.localizacion;
 		ResourceBundle lang = ResourceBundle.getBundle("lang.mensajes", localizacion);
 
-		this.gd = gd;
+		this.ga = ga;
 		setSize(750, 209);
 
 		Container c = getContentPane();
@@ -109,8 +113,8 @@ public class A extends JInternalFrame implements ActionListener {
 		
 		JPanel pnlRevista = new JPanel();
 		pnlRevista.setLayout(new GridLayout(2,1));
-		pnlRevista.add(new JLabel(gd.getRevista().getNombre()));
-		pnlRevista.add(new JLabel(lang.getString("Edicion:") + gd.getRevista().getnEdicion()));
+		pnlRevista.add(new JLabel(ga.getRevista().getNombre()));
+		pnlRevista.add(new JLabel(lang.getString("Edicion:") + ga.getRevista().getnEdicion()));
 		
 		c.add(pnlRevista, BorderLayout.NORTH);
 		c.add(pnlA, BorderLayout.CENTER);
@@ -118,7 +122,7 @@ public class A extends JInternalFrame implements ActionListener {
 	}
 
 	public void newArticulo() {
-		gd.addArticulo(txtTitulo.getText(), txtResumen.getText(), txtInicio.getText(), txtFinal.getText(), txtNombre.getText(), txtApellido.getText(), txtCedula.getText(), txtNacionalidad.getText(), txtSeudonimo.getText());
+		ga.addArticulo(txtTitulo.getText(), txtResumen.getText(), txtInicio.getText(), txtFinal.getText(), txtApellido.getText(), txtNombre.getText(), txtCedula.getText(), txtNacionalidad.getText(), txtSeudonimo.getText(), txtAutor.getText());
 	}
 	
 	private void limpiar() {
@@ -127,6 +131,7 @@ public class A extends JInternalFrame implements ActionListener {
 		txtInicio.setText("");
 		txtFinal.setText("");
 		txtApellido.setText("");
+		txtNombre.setText("");
 		txtCedula.setText("");
 		txtSeudonimo.setText("");
 		txtNacionalidad.setText("");

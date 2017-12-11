@@ -13,7 +13,7 @@ import modelo.Paciente;
 public class GestionF {
 	
 	private List<Paciente> pacientes;
-	private String pathF = "archivos/F.txt";
+	private String pathF = "src/archivos/F.txt";
 	
 	public GestionF() {
 		pacientes = new ArrayList<Paciente>();

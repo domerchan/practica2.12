@@ -19,7 +19,7 @@ public class GestionC {
 	
 	private List<Departamento> departamentos;
 	private List<Empleado> empleados;
-	private String pathC = "archivos/C.txt";
+	private String pathC = "src/archivos/C.txt";
 	
 	public GestionC() {
 		

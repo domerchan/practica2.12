@@ -14,7 +14,7 @@ public class GestionE {
 	
 	private List<Equipo> equipos;
 	private List<Jugador> jugadores;
-	private String pathE = "archivos/E.txt";
+	private String pathE = "src/archivos/E.txt";
 	
 	public GestionE() {
 		equipos = new ArrayList<Equipo>();

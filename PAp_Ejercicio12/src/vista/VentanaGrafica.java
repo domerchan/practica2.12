@@ -12,8 +12,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
-import controlador.GestionB;
-import controlador.GestionDatos;
+
+
 
 public class VentanaGrafica extends JFrame implements ActionListener {
 	
@@ -25,8 +25,9 @@ public class VentanaGrafica extends JFrame implements ActionListener {
 			idiomaes;
 
 	public VentanaGrafica() {
-		gd = new GestionDatos();
 		initComponents();
+		gd = new GestionDatos();
+		
 	}
 
 	private void initComponents() {
@@ -34,7 +35,7 @@ public class VentanaGrafica extends JFrame implements ActionListener {
 		localizacion = new Locale("es", "EC");
 		ResourceBundle lang = ResourceBundle.getBundle("lang.mensajes", localizacion);
 		setSize(800, 600);
-		setTitle(lang.getString(lang.getString("Gestion Listas")));
+		setTitle(lang.getString("Gestion Listas"));
 		getContentPane().setLayout(new BorderLayout());
 		escritorio = new JDesktopPane();
 		getContentPane().add(escritorio, BorderLayout.CENTER);
@@ -73,7 +74,7 @@ public class VentanaGrafica extends JFrame implements ActionListener {
 		mnuVentanaF.setActionCommand("mnuVentanaF");
 		mnuVentanaRegistro.add(mnuVentanaF);
 
-		mnuSalir = new JMenuItem("Salir");
+		mnuSalir = new JMenuItem(lang.getString("Salir"));
 		mnuSalir.addActionListener(this);
 		mnuSalir.setActionCommand("mnuSalir");
 		mnuVentanaRegistro.add(mnuSalir);
@@ -205,7 +206,7 @@ public class VentanaGrafica extends JFrame implements ActionListener {
 
 	private void llamarVentanaA() {
 		// TODO Auto-generated method stub
-		A vnta = new A(gd);
+		A vnta = new A(ga);
 		vnta.setVisible(true);
 		escritorio.add(vnta);
 		try {

@@ -15,7 +15,7 @@ public class GestionB {
 	private List<Pais> paises;
 	private List<Provincia> provincias;
 	private List<Canton> cantones;
-	private String pathB = "archivos/B.txt";
+	private String pathB = "src/archivos/B.txt";
 
 	public GestionB() {
 		paises = new ArrayList<Pais>();
@@ -31,6 +31,7 @@ public class GestionB {
 			pais.setPresidente(presidente);
 			pais.setnHabitantes(nHabitantes);
 			pais.setProvincias(provincias);
+			paises.add(pais);
 
 			FileWriter file = new FileWriter(pathB, true);
 			BufferedWriter out = new BufferedWriter(file);

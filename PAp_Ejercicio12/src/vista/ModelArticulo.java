@@ -21,7 +21,7 @@ public class ModelArticulo extends AbstractTableModel {
 		super();
 		datos = new ArrayList<Articulo>();
 		Locale localizacion = VentanaGrafica.localizacion;
-		lang = ResourceBundle.getBundle("Idioma.mensajes", localizacion);
+		lang = ResourceBundle.getBundle("lang.mensajes", localizacion);
 	}
 	
 	public ModelArticulo(List<Articulo> datos) {

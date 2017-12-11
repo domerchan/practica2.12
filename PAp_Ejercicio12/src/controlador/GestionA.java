@@ -17,7 +17,7 @@ public class GestionA {
 	private List<Articulo> articulos;
 	private List<Autor> autores;
 	private Revista revista;
-	private String pathA = "archivos/A.txt";
+	private String pathA = "src/archivos/A.txt";
 	
 	public GestionA() {
 		articulos = new ArrayList<Articulo>();
@@ -26,7 +26,7 @@ public class GestionA {
 
 	}
 	
-	public void addArticulo(String titulo, String resumen, String pInicio, String pFinal, Autor autor,
+	public void addArticulo(String titulo, String resumen, String pInicio, String pFinal, String autor,
 			String nombre, String apellido, String cedula, String nacionalidad, String seudonimo) {
 		try {
 			Autor autor1 = new Autor();

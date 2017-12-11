@@ -16,7 +16,7 @@ public class GestionD {
 	
 	private List<Competencia> competencias;
 	private List<Atleta> atletas;
-	private String pathD = "archivos/D.txt";
+	private String pathD = "src/archivos/D.txt";
 	
 	public GestionD() {
 		competencias = new ArrayList<Competencia>();
