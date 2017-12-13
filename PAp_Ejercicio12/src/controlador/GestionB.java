@@ -54,7 +54,7 @@ public class GestionB {
 
 	}
 
-	public void saveProvincia(Provincia provincia) throws IOException {
+	private void saveProvincia(Provincia provincia) throws IOException {
 		FileWriter file = new FileWriter(pathB, true);
 		BufferedWriter out = new BufferedWriter(file);
 		String registro = provincia.getNombre() + " , " + provincia.getnHabitantes();
@@ -94,7 +94,7 @@ public class GestionB {
 		}
 	}
 
-	public void saveCanton(Canton canton) throws IOException {
+	private void saveCanton(Canton canton) throws IOException {
 		FileWriter file = new FileWriter(pathB, true);
 		BufferedWriter out = new BufferedWriter(file);
 		String registro = canton.getNombre() + " , " + canton.getnHabitantes() + " , " + canton.getUbicacionGPS();
