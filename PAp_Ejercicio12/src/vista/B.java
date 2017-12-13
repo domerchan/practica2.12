@@ -22,9 +22,6 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import controlador.GestionB;
-import controlador.ModelCantones;
-import controlador.ModelPaises;
-import controlador.ModelProvincias;
 
 public class B extends JInternalFrame implements ActionListener, ItemListener {
 

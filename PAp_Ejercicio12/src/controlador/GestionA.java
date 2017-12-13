@@ -26,23 +26,16 @@ public class GestionA {
 
 	}
 	
-	public void addArticulo(String titulo, String resumen, String pInicio, String pFinal, String autor,
+	public void addArticulo(String titulo, String resumen, String pInicio, String pFinal,
 			String nombre, String apellido, String cedula, String nacionalidad, String seudonimo) {
 		try {
 			Autor autor1 = new Autor();
-//>>>>>>> branch 'master' of https://github.com/domerchan/practica2.12.git
 			autor1.setNombre(nombre);
 			autor1.setApellido(apellido);
 			autor1.setCedula(cedula);
 			autor1.setNacionalidad(nacionalidad);
-/*<<<<<<< HEAD
-			autor1.setSeudonimo(seudonimo);
-			
-=======*/
 			autor1.setSeudonimo(seudonimo);
 			autores.add(autor1);
-
-//>>>>>>> branch 'master' of https://github.com/domerchan/practica2.12.git
 			Articulo articulo = new Articulo();
 			articulo.setAutor(autor1);
 			articulo.setTitulo(titulo);
@@ -84,6 +77,10 @@ public class GestionA {
 	
 	public Revista getRevista() {
 		return revista;
+	}
+	
+	public List<Articulo> getArticulos() {
+		return articulos;
 	}
 	
 	public boolean isCedulaValida(String cedula) throws Exception{

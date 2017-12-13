@@ -34,7 +34,6 @@ public class A extends JInternalFrame implements ActionListener {
 	private JTextField txtCedula;
 	private JTextField txtSeudonimo;
 	private JTextField txtNacionalidad;
-	private JTextField txtAutor;
 	private JButton btnGuardar;
 	private JButton btnLimpiar;
 	private JComboBox cbxAutor;
@@ -123,7 +122,7 @@ public class A extends JInternalFrame implements ActionListener {
 	}
 
 	public void newArticulo() {
-		ga.addArticulo(txtTitulo.getText(), txtResumen.getText(), txtInicio.getText(), txtFinal.getText(), txtApellido.getText(), txtNombre.getText(), txtCedula.getText(), txtNacionalidad.getText(), txtSeudonimo.getText(), txtAutor.getText());
+		ga.addArticulo(txtTitulo.getText(), txtResumen.getText(), txtInicio.getText(), txtFinal.getText(), txtNombre.getText(), txtApellido.getText(), txtCedula.getText(), txtNacionalidad.getText(), txtSeudonimo.getText());
 	}
 	
 	private void limpiar() {
@@ -145,6 +144,7 @@ public class A extends JInternalFrame implements ActionListener {
 		switch (command) {
 		case "Guardar":
 			newArticulo();
+			tblArticulo.setModel(new ModelArticulo(ga.getArticulos()));
 			break;
 		case "Limpiar":
 			limpiar();

@@ -1,4 +1,4 @@
-package controlador;
+package vista;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,28 +7,27 @@ import java.util.ResourceBundle;
 
 import javax.swing.table.AbstractTableModel;
 
-import modelo.Canton;
-import vista.VentanaGrafica;
+import modelo.Provincia;
 
-public class ModelCantones extends AbstractTableModel {
+public class ModelProvincias extends AbstractTableModel {
 
 	private Locale localizacion = VentanaGrafica.localizacion;
 	private ResourceBundle lang = ResourceBundle.getBundle("lang.mensajes", localizacion);
-	private List<Canton> datos; 
-	public String[] columnas = {lang.getString("Nombre"), lang.getString("Ubicacion"), "#" + lang.getString("Habitantes")};
-	public Class[] columnasTipos = {String.class, String.class, String.class};
+	private List<Provincia> datos;
+	public String[] columnas = {lang.getString("Nombre"), "#" + lang.getString("Habitantes")};
+	public Class[] columnasTipos = {String.class, String.class};
 	
-	public ModelCantones() {
+	public ModelProvincias() {
 		super();
-		datos = new ArrayList<Canton>();
+		datos = new ArrayList<Provincia>();
 		Locale localizacion = VentanaGrafica.localizacion;
 		lang = ResourceBundle.getBundle("lang.mensajes", localizacion);
 	}
 	
-	public ModelCantones(List<Canton> datos) {
+	public ModelProvincias(List<Provincia> datos) {
 		super();
 		if (datos == null)
-			this.datos = new ArrayList<Canton>();
+			this.datos = new ArrayList<Provincia>();
 		else
 			this.datos = datos;
 	}
@@ -52,14 +51,12 @@ public class ModelCantones extends AbstractTableModel {
 	
 	public Object getValueAt(int row, int col) {
 		
-		Canton dato = (Canton) (datos.get(row));
+		Provincia dato = (Provincia) (datos.get(row));
 		
 		switch(col) {
 		case 0:
 			return dato.getNombre();
 		case 1:
-			return dato.getUbicacionGPS();
-		case 2:
 			return dato.getnHabitantes();
 		default:
 			break;
