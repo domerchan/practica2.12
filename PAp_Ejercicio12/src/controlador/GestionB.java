@@ -23,7 +23,12 @@ public class GestionB {
 		paises = new ArrayList<Pais>();
 		provinciasE = new ArrayList<Provincia>();
 		cantonesP = new ArrayList<Canton>();
+		cantonesG = new ArrayList<Canton>();
+		cantonesA = new ArrayList<Canton>();
 
+		addCanton();
+		addProvincia();
+		addPais();
 	}
 
 	public void addPais() {

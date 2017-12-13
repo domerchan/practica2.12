@@ -60,19 +60,20 @@ public class A extends JInternalFrame implements ActionListener {
 		pnlDatos.setLayout(new GridLayout(2, 1));
 
 		JPanel pnlArticulo = new JPanel();
-		pnlArticulo.setLayout(new GridLayout(4, 2));
+		pnlArticulo.setLayout(new GridLayout(5, 2));
 		pnlArticulo.add(new JLabel(lang.getString("Titulo") + ": "));
 		txtTitulo = new JTextField(20);
 		pnlArticulo.add(txtTitulo);
-		pnlArticulo.add(new JLabel(lang.getString("Resumen") + ": "));
-		txtResumen = new JTextArea(10,20); 
-		pnlArticulo.add(txtResumen);
 		pnlArticulo.add(new JLabel(lang.getString("Inicio") + ": "));
 		txtInicio = new JTextField(20);
 		pnlArticulo.add(txtInicio);
 		pnlArticulo.add(new JLabel(lang.getString("Final") + ": "));
 		txtFinal = new JTextField(20); 
 		pnlArticulo.add(txtFinal);
+		pnlArticulo.add(new JLabel(lang.getString("Resumen") + ": "));
+		txtResumen = new JTextArea(10,20); 
+		pnlArticulo.add(txtResumen);
+		
 		
 		JPanel pnlAutor = new JPanel();
 		pnlAutor.setBorder(BorderFactory.createTitledBorder(lang.getString("Autor") + ": "));
@@ -109,7 +110,7 @@ public class A extends JInternalFrame implements ActionListener {
 		JScrollPane scpArticulo = new JScrollPane(tblArticulo);
 		
 		pnlA.add(pnlDatos);
-		pnlA.add(tblArticulo);
+		pnlA.add(scpArticulo);
 		
 		JPanel pnlRevista = new JPanel();
 		pnlRevista.setLayout(new GridLayout(2,1));
@@ -118,7 +119,6 @@ public class A extends JInternalFrame implements ActionListener {
 		
 		c.add(pnlRevista, BorderLayout.NORTH);
 		c.add(pnlA, BorderLayout.CENTER);
-		c.add(new JLabel("prueba"), BorderLayout.SOUTH);
 
 	}
 

@@ -13,7 +13,7 @@ import vista.VentanaGrafica;
 public class ModelProvincias extends AbstractTableModel {
 
 	private Locale localizacion = VentanaGrafica.localizacion;
-	private ResourceBundle lang = ResourceBundle.getBundle("Idioma.mensajes", localizacion);
+	private ResourceBundle lang = ResourceBundle.getBundle("lang.mensajes", localizacion);
 	private List<Provincia> datos;
 	public String[] columnas = {lang.getString("Nombre"), "#" + lang.getString("Habitantes")};
 	public Class[] columnasTipos = {String.class, String.class};
@@ -22,7 +22,7 @@ public class ModelProvincias extends AbstractTableModel {
 		super();
 		datos = new ArrayList<Provincia>();
 		Locale localizacion = VentanaGrafica.localizacion;
-		lang = ResourceBundle.getBundle("Idioma.mensajes", localizacion);
+		lang = ResourceBundle.getBundle("lang.mensajes", localizacion);
 	}
 	
 	public ModelProvincias(List<Provincia> datos) {
