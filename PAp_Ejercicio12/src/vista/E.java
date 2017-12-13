@@ -11,18 +11,18 @@ import javax.swing.BorderFactory;
 import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 
-import controlador.GestionDatos;
+import controlador.GestionE;
 
 public class E extends JInternalFrame implements ActionListener {
 
-	private GestionDatos gd;
+	private GestionE ge;
 	
-	public E(GestionDatos gd) {
+	public E(GestionE gd) {
 
 		Locale localizacion = VentanaGrafica.localizacion;
 		ResourceBundle lang = ResourceBundle.getBundle("lang.mensajes", localizacion);
 
-		this.gd = gd;
+		this.ge = gd;
 		setSize(750, 209);
 
 		Container c = getContentPane();

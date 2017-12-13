@@ -47,7 +47,7 @@ public class A extends JInternalFrame implements ActionListener {
 		ResourceBundle lang = ResourceBundle.getBundle("lang.mensajes", localizacion);
 
 		this.ga = ga;
-		setSize(750, 209);
+		setSize(700, 500);
 
 		Container c = getContentPane();
 		c.setLayout(new BorderLayout());
@@ -61,35 +61,35 @@ public class A extends JInternalFrame implements ActionListener {
 
 		JPanel pnlArticulo = new JPanel();
 		pnlArticulo.setLayout(new GridLayout(4, 2));
-		pnlArticulo.add(new JLabel(lang.getString("Titulo:")));
+		pnlArticulo.add(new JLabel(lang.getString("Titulo") + ": "));
 		txtTitulo = new JTextField(20);
 		pnlArticulo.add(txtTitulo);
-		pnlArticulo.add(new JLabel(lang.getString("Resumen:")));
+		pnlArticulo.add(new JLabel(lang.getString("Resumen") + ": "));
 		txtResumen = new JTextArea(10,20); 
 		pnlArticulo.add(txtResumen);
-		pnlArticulo.add(new JLabel(lang.getString("Inicio:")));
+		pnlArticulo.add(new JLabel(lang.getString("Inicio") + ": "));
 		txtInicio = new JTextField(20);
 		pnlArticulo.add(txtInicio);
-		pnlArticulo.add(new JLabel(lang.getString("Final:")));
+		pnlArticulo.add(new JLabel(lang.getString("Final") + ": "));
 		txtFinal = new JTextField(20); 
 		pnlArticulo.add(txtFinal);
 		
 		JPanel pnlAutor = new JPanel();
-		pnlAutor.setBorder(BorderFactory.createTitledBorder(lang.getString("Autor:")));
+		pnlAutor.setBorder(BorderFactory.createTitledBorder(lang.getString("Autor") + ": "));
 		pnlAutor.setLayout(new GridLayout(3,4));
-		pnlAutor.add(new JLabel(lang.getString("Nombre:")));
+		pnlAutor.add(new JLabel(lang.getString("Nombre") + ": "));
 		txtNombre = new JTextField(20);
 		pnlAutor.add(txtNombre);
-		pnlAutor.add(new JLabel(lang.getString("Apellido:")));
+		pnlAutor.add(new JLabel(lang.getString("Apellido") + ": "));
 		txtApellido = new JTextField(20);
 		pnlAutor.add(txtApellido);
-		pnlAutor.add(new JLabel(lang.getString("Cedula:")));
+		pnlAutor.add(new JLabel(lang.getString("Cedula") + ": "));
 		txtCedula = new JTextField(20);
 		pnlAutor.add(txtCedula);
-		pnlAutor.add(new JLabel(lang.getString("Seudonimo:")));
+		pnlAutor.add(new JLabel(lang.getString("Seudonimo") + ": "));
 		txtSeudonimo = new JTextField(20);
 		pnlAutor.add(txtSeudonimo);
-		pnlAutor.add(new JLabel(lang.getString("Nacionalidad:")));
+		pnlAutor.add(new JLabel(lang.getString("Nacionalidad") + ": "));
 		txtNacionalidad = new JTextField(20);
 		pnlAutor.add(txtNacionalidad);
 		btnGuardar = new JButton(lang.getString("Guardar"));
@@ -114,10 +114,11 @@ public class A extends JInternalFrame implements ActionListener {
 		JPanel pnlRevista = new JPanel();
 		pnlRevista.setLayout(new GridLayout(2,1));
 		pnlRevista.add(new JLabel(ga.getRevista().getNombre()));
-		pnlRevista.add(new JLabel(lang.getString("Edicion:") + ga.getRevista().getnEdicion()));
+		pnlRevista.add(new JLabel(lang.getString("Edicion") + ga.getRevista().getnEdicion()));
 		
 		c.add(pnlRevista, BorderLayout.NORTH);
 		c.add(pnlA, BorderLayout.CENTER);
+		c.add(new JLabel("prueba"), BorderLayout.SOUTH);
 
 	}
 
@@ -151,36 +152,4 @@ public class A extends JInternalFrame implements ActionListener {
 		}
 	}
 
-	/*
-	 * ESPAÑOL 
-	 Datos Datos 
-	 Titulo: Título: 
-	 Resumen: Resumen: 
-	 Inicio: Página Inicial: 
-	 Final: Página Final: 
-	 Autor Autor
-	 Nombre: Nombre: 
-	 Apellido: Apellido: 
-	 Cedula: Cédula: 
-	 Nacionalidad: Nacionalidad: 
-	 Guardar Guardar
-	 Edicion: Edición: 
-	 Limpiar Limpiar
-	  
-	 * INGLES 
-	 Datos Data 
-	 Titulo: Title: 
-	 Resumen: Summary: 
-	 Inicio: Initial Page: 
-	 Final: Final Page: 
-	 Autor Author
-	 Nombre: Name: 
-	 Apellido: Last Name: 
-	 Cedula: ID: 
-	 Nacionalidad: Nationality: 
-	 Guardar Save
-	 Edicion: Edition: 
-	 Limpiar Clean
-	 
-	 */
 }

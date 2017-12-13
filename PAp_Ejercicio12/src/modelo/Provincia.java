@@ -5,7 +5,6 @@ import java.util.List;
 public class Provincia {
 
 	private String nombre;
-	private String alcalde;
 	private String nHabitantes;
 	private List<Canton> cantones;
 	
@@ -13,10 +12,9 @@ public class Provincia {
 		
 	}
 
-	public Provincia(String nombre, String alcalde, String nHabitantes, List<Canton> cantones) {
+	public Provincia(String nombre, String nHabitantes, List<Canton> cantones) {
 		super();
 		this.nombre = nombre;
-		this.alcalde = alcalde;
 		this.nHabitantes = nHabitantes;
 		this.cantones = cantones;
 	}
@@ -27,14 +25,6 @@ public class Provincia {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-
-	public String getAlcalde() {
-		return alcalde;
-	}
-
-	public void setAlcalde(String alcalde) {
-		this.alcalde = alcalde;
 	}
 
 	public String getnHabitantes() {

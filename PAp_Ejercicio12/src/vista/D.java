@@ -11,13 +11,13 @@ import javax.swing.BorderFactory;
 import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 
-import controlador.GestionDatos;
+import controlador.GestionD;
 
 public class D extends JInternalFrame implements ActionListener {
 
-	private GestionDatos gd;
+	private GestionD gd;
 	
-	public D(GestionDatos gd) {
+	public D(GestionD gd) {
 
 		Locale localizacion = VentanaGrafica.localizacion;
 		ResourceBundle lang = ResourceBundle.getBundle("lang.mensajes", localizacion);

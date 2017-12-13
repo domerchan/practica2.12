@@ -12,6 +12,13 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
+import controlador.GestionA;
+import controlador.GestionB;
+import controlador.GestionC;
+import controlador.GestionD;
+import controlador.GestionE;
+import controlador.GestionF;
+
 
 
 
@@ -19,14 +26,24 @@ public class VentanaGrafica extends JFrame implements ActionListener {
 	
 	public static Locale localizacion;
 	private JDesktopPane escritorio;
-	private GestionDatos gd;
+	private GestionA ga;
+	private GestionB gb;
+	private GestionC gc;
+	private GestionD gd;
+	private GestionE ge;
+	private GestionF gf;
 	private JMenu mnuVentanaRegistro, mnuVentanaTablas, idioma;
 	private JMenuItem mnuVentanpais, mnuVentanaC, mnuVentanaD, mnuIdiom, mnuVentanaE, mnuVentanaA, mnuVentanaF, mnuSalir, idiomaen,
 			idiomaes;
 
 	public VentanaGrafica() {
 		initComponents();
-		gd = new GestionDatos();
+		ga = new GestionA();
+		gb = new GestionB();
+		gc = new GestionC();
+		gd = new GestionD();
+		ge = new GestionE();
+		gf = new GestionF();
 		
 	}
 
@@ -35,7 +52,7 @@ public class VentanaGrafica extends JFrame implements ActionListener {
 		localizacion = new Locale("es", "EC");
 		ResourceBundle lang = ResourceBundle.getBundle("lang.mensajes", localizacion);
 		setSize(800, 600);
-		setTitle(lang.getString("Gestion Listas"));
+		setTitle(lang.getString("Gestion"));
 		getContentPane().setLayout(new BorderLayout());
 		escritorio = new JDesktopPane();
 		getContentPane().add(escritorio, BorderLayout.CENTER);
@@ -142,7 +159,7 @@ public class VentanaGrafica extends JFrame implements ActionListener {
 
 	private void llamarVentanaF() {
 		// TODO Auto-generated method stub
-		F vntf = new F(gd);
+		F vntf = new F(gf);
 		vntf.setVisible(true);
 		escritorio.add(vntf);
 		try {
@@ -154,7 +171,7 @@ public class VentanaGrafica extends JFrame implements ActionListener {
 
 	private void llamarVentanaE() {
 		// TODO Auto-generated method stub
-		E vnte = new E(gd);
+		E vnte = new E(ge);
 		vnte.setVisible(true);
 		escritorio.add(vnte);
 		try {
@@ -180,7 +197,7 @@ public class VentanaGrafica extends JFrame implements ActionListener {
 
 	private void llamarVentanaC() {
 		// TODO Auto-generated method stub
-		C vntc = new C(gd);
+		C vntc = new C(gc);
 		vntc.setVisible(true);
 		escritorio.add(vntc);
 		try {
@@ -193,7 +210,7 @@ public class VentanaGrafica extends JFrame implements ActionListener {
 
 	private void llamarVentanaB() {
 		// TODO Auto-generated method stub
-		B vntb = new B(gd);
+		B vntb = new B(gb);
 		vntb.setVisible(true);
 		escritorio.add(vntb);
 		try {

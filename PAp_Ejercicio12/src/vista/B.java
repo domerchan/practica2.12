@@ -16,11 +16,15 @@ import javax.swing.JComboBox;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import controlador.GestionB;
+import controlador.ModelCantones;
+import controlador.ModelPaises;
+import controlador.ModelProvincias;
 
 public class B extends JInternalFrame implements ActionListener, ItemListener {
 
@@ -28,17 +32,11 @@ public class B extends JInternalFrame implements ActionListener, ItemListener {
 	private JComboBox cbxPais;
 	private JComboBox cbxProvincia;
 	private JComboBox cbxCanton;
-	private JTextField txtTitulo;
-	private JTextArea txtResumen;
-	private JTextField txtInicio;
-	private JTextField txtFinal;
-	private JTextField txtNombre;
-	private JTextField txtnHabitantes;
-	private JTextField txtPresidente;
-	private JButton btnGuardar;
-	private JButton btnLimpiar;
-	private JTable tblArticulo;
-	
+	private JTable tblPais;
+	private JTable tblProvincia;
+	private JTable tblCanton;
+	private JButton btnCargar;
+
 	public B(GestionB gb) {
 
 		Locale localizacion = VentanaGrafica.localizacion;
@@ -51,88 +49,84 @@ public class B extends JInternalFrame implements ActionListener, ItemListener {
 		c.setLayout(new BorderLayout());
 
 		JPanel pnlDatos = new JPanel();
-		pnlDatos.setBorder(BorderFactory.createTitledBorder(lang.getString("Datos")));
-		pnlDatos.setLayout(new GridLayout(1,3));
-		
-		
-		JPanel pnlPais = new JPanel();
-		pnlPais.setBorder(BorderFactory.createTitledBorder(lang.getString("Autor:")));
-		pnlPais.setLayout(new GridLayout(3,4));
-		pnlPais.add(new JLabel(lang.getString("Nombre:")));
-		txtNombre = new JTextField(20);
-		pnlPais.add(txtNombre);
-		pnlPais.add(new JLabel(lang.getString("Apellido:")));
-		txtPresidente = new JTextField(20);
-		pnlPais.add(txtPresidente);
-		pnlPais.add(new JLabel(lang.getString("Cedula:")));
-		txtnHabitantes = new JTextField(20);
-		pnlPais.add(txtnHabitantes);
-		btnGuardar = new JButton(lang.getString("Guardar"));
-		btnGuardar.addActionListener(this);
-		btnGuardar.setActionCommand("Guardar");
-		pnlPais.add(btnGuardar);
-		btnLimpiar = new JButton(lang.getString("Limpiar"));
-		btnLimpiar.addActionListener(this);
-		btnLimpiar.setActionCommand("Limpiar");
-		pnlPais.add(btnLimpiar);
-		
-		JPanel pnlProvincia = new JPanel();
-		pnlProvincia.setLayout(new GridLayout(4,2));
-		pnlProvincia.setBorder(BorderFactory.createEmptyBorder());
-		txtTitulo = new JTextField(20);
-		pnlProvincia.add(txtTitulo);
-		pnlProvincia.add(new JLabel(lang.getString("Resumen:")));
-		txtResumen = new JTextArea(10,20); 
-		pnlProvincia.add(txtResumen);
-		pnlProvincia.add(new JLabel(lang.getString("Inicio:")));
-		txtInicio = new JTextField(20);
-		pnlProvincia.add(txtInicio);
-		pnlProvincia.add(new JLabel(lang.getString("Final:")));
-		txtFinal = new JTextField(20); 
-		pnlProvincia.add(txtFinal);
-		
-		JPanel pnlCanton = new JPanel();
-		pnlCanton.setLayout(new GridLayout(4,2));
-		pnlCanton.setBorder(BorderFactory.createEmptyBorder());
-		txtTitulo = new JTextField(20);
-		pnlCanton.add(txtTitulo);
-		pnlCanton.add(new JLabel(lang.getString("Resumen:")));
-		txtResumen = new JTextArea(10,20); 
-		pnlCanton.add(txtResumen);
-		pnlCanton.add(new JLabel(lang.getString("Inicio:")));
-		txtInicio = new JTextField(20);
-		pnlCanton.add(txtInicio);
-		pnlCanton.add(new JLabel(lang.getString("Final:")));
-		txtFinal = new JTextField(20); 
-		pnlCanton.add(txtFinal);
-		
-		
-		
+		pnlDatos.setBorder(BorderFactory.createEmptyBorder());
+		pnlDatos.setLayout(new GridLayout(4, 1));
 
-		
-	//	String[] paises = gb.getPaies();
-		//String[] provincias = gb.searchProvincias(cbxPais.getSelectedItem().toString());
-		//String[] cantones = gb.searchCantones(cbxProvincia.getSelectedItem().toString());
-		//cbxPais = new JComboBox(paises);
-		
+		JPanel pnlOp = new JPanel();
+		pnlOp.setBorder(BorderFactory.createEmptyBorder());
+		pnlOp.setLayout(new GridLayout(2, 3));
+		pnlOp.add(new JLabel(lang.getString("Pais") + ": "));
+		pnlOp.add(new JLabel(lang.getString("Provincia") + ": "));
+		pnlOp.add(new JLabel(lang.getString("Canton") + ": "));
+		String[] paises = gb.getPaises();
+		String[] cantones = gb.getCantones(cbxProvincia.getSelectedItem().toString());
+		String[] provincias = gb.getProvincias(cbxPais.getSelectedItem().toString());
+		cbxPais = new JComboBox(paises);
+		cbxProvincia = new JComboBox(provincias);
+		cbxCanton = new JComboBox(cantones);
+		pnlOp.add(cbxPais);
+		pnlOp.add(cbxProvincia);
+		pnlOp.add(cbxCanton);
 
+		tblPais = new JTable();
+		tblPais.setModel(new ModelPaises());
+		JScrollPane sPais = new JScrollPane(tblPais);
+
+		tblProvincia = new JTable();
+		tblPais.setModel(new ModelPaises());
+		JScrollPane sProvincia = new JScrollPane(tblPais);
+
+		tblCanton = new JTable();
+		tblCanton.setModel(new ModelPaises());
+		JScrollPane sCanton = new JScrollPane(tblCanton);
+
+		pnlDatos.add(pnlOp);
+		pnlDatos.add(tblCanton);
+		pnlDatos.add(tblProvincia);
+		pnlDatos.add(tblPais);
+
+		JPanel pnlButton = new JPanel();
+		btnCargar = new JButton(lang.getString("btnCargar"));
+		btnCargar.addActionListener(this);
+		btnCargar.setActionCommand("btnCargar");
+
+		c.add(pnlDatos, BorderLayout.CENTER);
+		c.add(pnlButton, BorderLayout.SOUTH);
 	}
 
 	public void actionPerformed(ActionEvent e) {
 
+		String command = e.getActionCommand();
+		switch (command) {
+		case "btnCargar":
+			tblPais.setModel(new ModelPaises(gb.listPa(cbxPais.getSelectedItem().toString())));
+			tblProvincia.setModel(new ModelProvincias(gb.listP(cbxPais.getSelectedItem().toString())));
+			tblCanton.setModel(new ModelCantones(gb.listC(cbxProvincia.getSelectedItem().toString())));
+		}
 	}
 
 	public void itemStateChanged(ItemEvent e) {
-		
+
+		if (cbxPais.getSelectedItem().equals("Ecuador")) {
+			cbxProvincia.removeAllItems();
+			cbxProvincia.addItem("Pichincha");
+			cbxProvincia.addItem("Guayas");
+			cbxProvincia.addItem("Azuay");
+		}
+
+		if (cbxProvincia.getSelectedItem().equals("Pichincha")) {
+			cbxCanton.removeAllItems();
+			cbxCanton.addItem("Quito");
+			cbxCanton.addItem("Cayambe");
+		} else if (cbxProvincia.getSelectedItem().equals("Guayas")) {
+			cbxCanton.removeAllItems();
+			cbxCanton.addItem("Guayaquil");
+			cbxCanton.addItem("Daule");
+		} else if (cbxProvincia.getSelectedItem().equals("Azuay")) {
+			cbxCanton.removeAllItems();
+			cbxCanton.addItem("Cuenca");
+			cbxCanton.addItem("Gualaceo");
+		} 
 	}
-	
-	/*
-	 * ESPANOL
-	 Provincia Provincia
-	 
-	 * INGLES
-	 Provincia  Province
-	 
-	 * */
 
 }
